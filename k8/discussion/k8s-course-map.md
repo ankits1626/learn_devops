@@ -523,9 +523,30 @@ eksctl delete cluster --name job-board-cluster
 
 ## Tools We'll Use (Mac)
 
+### Container Runtime (Choose One)
+
+| Option | Pros | Cons | Install |
+|--------|------|------|---------|
+| **Podman Desktop** | Rootless, no daemon, free, OCI-native | Newer ecosystem | `brew install --cask podman-desktop` |
+| **Docker Desktop** | Most popular, great UI | License for enterprise | `brew install --cask docker` |
+| **Rancher Desktop** | K8s included, free | Heavier | `brew install --cask rancher` |
+
+**Recommended:** Podman (2026 standard, truly free, more secure)
+
+```bash
+# Podman setup on Mac
+brew install --cask podman-desktop
+podman machine init
+podman machine start
+
+# Alias for Docker compatibility
+alias docker=podman
+```
+
+### Kubernetes Tools
+
 | Tool | Purpose | Install |
 |------|---------|---------|
-| **Docker Desktop** or **Rancher Desktop** | Container runtime | `brew install --cask docker` |
 | **kubectl** | K8s CLI | `brew install kubectl` |
 | **kind** | Local K8s clusters | `brew install kind` |
 | **k9s** | Terminal UI | `brew install derailed/k9s/k9s` |
@@ -534,6 +555,16 @@ eksctl delete cluster --name job-board-cluster
 | **helm** | Package manager | `brew install helm` |
 | **eksctl** | EKS cluster management | `brew install eksctl` |
 | **aws-cli** | AWS command line | `brew install awscli` |
+
+### Podman + Kind Setup
+
+```bash
+# Using kind with Podman (recommended)
+KIND_EXPERIMENTAL_PROVIDER=podman kind create cluster
+
+# Or set permanently
+export KIND_EXPERIMENTAL_PROVIDER=podman
+```
 
 ---
 
