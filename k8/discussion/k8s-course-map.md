@@ -19,25 +19,25 @@ Throughout this course, we'll build a **Job Board Application** step-by-step:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    JOB BOARD APP                             │
+│                    JOB BOARD APP                            │
 ├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│   ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    │
-│   │  Frontend   │───▶│   Backend   │───▶│  Database   │    │
-│   │   (React)   │    │   (Go/Node) │    │ (Postgres)  │    │
-│   └─────────────┘    └─────────────┘    └─────────────┘    │
-│                                                              │
-│   Each chapter adds a new capability:                        │
-│   - Ch 1-2: Run containers                                   │
-│   - Ch 3: Connect services                                   │
-│   - Ch 4: Configure apps                                     │
+│                                                             │
+│   ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
+│   │  Frontend   │───▶│   Backend   │───▶│  Database   │     │
+│   │   (React)   │    │   (Go/Node) │    │ (Postgres)  │     │
+│   └─────────────┘    └─────────────┘    └─────────────┘     │
+│                                                             │
+│   Each chapter adds a new capability:                       │
+│   - Ch 1-2: Run containers                                  │
+│   - Ch 3: Connect services                                  │
+│   - Ch 4: Configure apps                                    │
 │   - Ch 5: Store data persistently                           │
 │   - Ch 6: Expose to internet                                │
 │   - Ch 7: Auto-heal & scale                                 │
 │   - Ch 8: Secure everything                                 │
 │   - Ch 9: Monitor & debug                                   │
 │   - Ch 10: Deploy to production                             │
-│                                                              │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -484,26 +484,26 @@ chapter_11/
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│              COST-OPTIMIZED EKS SETUP                        │
+│              COST-OPTIMIZED EKS SETUP                       │
 ├─────────────────────────────────────────────────────────────┤
-│                                                              │
+│                                                             │
 │   Control Plane: $0.10/hr (unavoidable)                     │
-│                                                              │
-│   Worker Nodes:                                              │
+│                                                             │
+│   Worker Nodes:                                             │
 │   ┌─────────────────────────────────────────────────────┐   │
 │   │  2x t3.small SPOT instances (~$0.006/hr each)       │   │
 │   │  = ~$9/month for compute                            │   │
 │   └─────────────────────────────────────────────────────┘   │
-│                                                              │
-│   Networking:                                                │
+│                                                             │
+│   Networking:                                               │
 │   ┌─────────────────────────────────────────────────────┐   │
 │   │  Public subnets only (no NAT Gateway = $0)          │   │
 │   │  ALB for ingress (~$16/month)                       │   │
 │   └─────────────────────────────────────────────────────┘   │
-│                                                              │
+│                                                             │
 │   Total: ~$100/month if running 24/7                        │
 │   Pro tip: Delete cluster when not learning!                │
-│                                                              │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
